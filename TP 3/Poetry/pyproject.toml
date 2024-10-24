@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tp n°3 retamoso y vallerga"
+version = "0.1.0"
+description = "Tp Estructura de Datos"
+authors = ["Retamoso y Vallerga"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.5"
+python-ed-fcad-uner = {git = "https://github.com/nachonovello1984/python-ed-fcad-uner.git"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
