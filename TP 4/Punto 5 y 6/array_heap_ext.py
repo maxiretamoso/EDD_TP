@@ -21,6 +21,7 @@ class ArrayHeapExt(ArrayHeap, ArrayHeapExtAbstract):
 
     def eliminar_por_prioridad(self, k: Any) -> None:        
         for i in range(len(self._data)):
+            
             if self._data[i]._key == k:
                 indice = i
                 break
