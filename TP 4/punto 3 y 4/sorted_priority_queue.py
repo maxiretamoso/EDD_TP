@@ -13,7 +13,7 @@ class SortedPriorityQueue(SortedPriorityQueueAbstract, PriorityQueueBase):
 
 
     def __str__(self) -> str:
-        return f'Queue = [{", ".join(f"{item._key}: {item._value}" for item in self._elements)}]'
+        return f'Queue: [{", ".join(f"{item._key}: {item._value}" for item in self._elements)}]'
 
 
     def is_empty(self) -> bool:
