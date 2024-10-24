@@ -26,7 +26,6 @@ otro_heap.add(4, 'O')
 otro_heap.add(5, 'U')
 
 print(f'\nHeap antes de los metodos: \n{heap}\n')
-
 print(f'otro_heap antes de los metodos: \n{otro_heap}\n')
 
 {heap.fusionar(otro_heap)}
