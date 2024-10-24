@@ -1,52 +1,42 @@
 from array_heap_ext import ArrayHeapExt
 
-
-heap1 = ArrayHeapExt()
-heap2 = ArrayHeapExt()
+heap = ArrayHeapExt()
+otro_heap = ArrayHeapExt()
     
-heap1.add(2,'B')
-heap1.add(5,'A')
-heap1.add(4,'C')
-heap1.add(15,'K')
-heap1.add(9,'F')
-heap1.add(7,'Q')
-heap1.add(6,'Z')
-heap1.add(16,'X')
-heap1.add(25,'J')
-heap1.add(14,'E')
-heap1.add(12,'H')
-heap1.add(11,'S')
-heap1.add(8,'W')
-heap1.add(20,'B')
-heap1.add(10,'L')
-    
-heap2.add(1, 'A')
-heap2.add(2, 'B')
-heap2.add(3, 'C')
-heap2.add(4, 'D')
-heap2.add(5, 'E')
-heap2.add(6, 'F')
-heap2.add(7, 'G')
-heap2.add(8, 'H')
-heap2.add(9, 'I')
-    
+heap.add(2,'B')
+heap.add(4,'C')
+heap.add(5,'A')
+heap.add(6,'Z')
+heap.add(7,'Q')
+heap.add(8,'W')
+heap.add(9,'F')
+heap.add(10,'L')
+heap.add(11,'S')
+heap.add(12,'H')
+heap.add(14,'E')
+heap.add(15,'K')
+heap.add(16,'X')
+heap.add(20,'B')
+heap.add(25,'J')
 
-print(f'\nprimer heap: {heap1}\nSegundo heap: {heap2}\n')
+otro_heap.add(1, 'A')
+otro_heap.add(2, 'E')
+otro_heap.add(3, 'I')
+otro_heap.add(4, 'O')
+otro_heap.add(5, 'U')
 
-print(f'El elemento minimo es: {heap1.min()}\n')
+print(f'\nHeap antes de los metodos: \n{heap}\n')
 
-print(f'Eliminando elemento minimo {heap1.remove_min()}\n')
+print(f'otro_heap antes de los metodos: \n{otro_heap}\n')
 
-print(f'Cambiando la prioridad de "25" a "14": {heap1.cambiar_prioridad(25, 14)}\n')
+{heap.fusionar(otro_heap)}
+print(f'Heap despues de fusionarlo con otro_heap: \n{heap}\n')
 
-print(f'Borrando los elementos con prioridad "5": {heap1.eliminar_por_prioridad(5)}\n')
+{heap.eliminar_por_prioridad(5)}
+print(f'Heap despues de borrar los elementos de prioridad "5": \n{heap}\n')
 
-print(f'Vaciar el arbol: {heap1.vaciar()}\n')
+{heap.cambiar_prioridad(14, 20)}
+print(f'Heap despues de cambiar la prioridad de "14" a "20": \n{heap}\n')
 
-print(f'El arbol esta vacio? {heap1.is_empty()}\n')
-
-print(f'Heap11: {heap1}\nHeap11: {heap2}\n')
-
-print(f'Fusionando el heap11 con el heap12 {heap1.fusionar(heap2)}\n')
-    
-print(f'Arbol despues de los metodos: {heap1}\n')
+{heap.vaciar()}
+print(f'Heap despues de vaciarlo: \n{heap}\n')
