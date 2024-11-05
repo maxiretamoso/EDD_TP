@@ -1,34 +1,30 @@
 from sorted_table_map import SortedTableMap
 
-map = SortedTableMap()
+def main():
+    stm = SortedTableMap()
 
-# metodo __setitem__ 
-map['a'] = 1
-map['c'] = 3
-map['b'] = 2
-print(f'Map despues de agregar elementos:  {map}')
-
-# metodo __getitem__
-try:
-    print(f'Valor para la clave {'b'}: {map['b']}')
-except KeyError as e:
-    print(e)
+    # metodo __setitem__
+    stm['clave1'] = 'San Lorenzo'
+    stm['clave3'] = 'Boca'
+    stm['clave2'] = 'River'
+    stm['clave5'] = 'Independiente'
+    stm['clave4'] = 'Racing'
     
-# metodo __setitem__
-map['a'] = 10
-print(f'Map después de actualizar la clave {'a'}: {map}')
+    # metodo __getitem__
+    print(f'\n{stm['clave1']}\n')   
 
-# metodo __delitem__
-try:
-    del map['b']
-    print(f'Map después de eliminar la clave {'b'}: {map}')
-except KeyError as e:
-    print(e)
-    
-# metodo __len__
-print(f'Longitud del map: {len(map)}')
+    # metodo __len__
+    print(f'{len(stm)}\n') 
 
-# metodo iter_items()
-print("Elementos en el map:")
-for item in map.iter_items():
-    print(item)
+    # metodo __del__
+    del stm['clave5']
+    print(f'{len(stm)}\n')
+
+    #metodo __iter__ e __iterItems__ 
+    print(f'{list(stm)}\n')   
+
+    for item in stm.iter_items():
+        print(f'{item}\n')   
+
+if __name__ == "__main__":
+    main()

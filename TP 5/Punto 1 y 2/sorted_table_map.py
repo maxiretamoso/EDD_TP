@@ -1,81 +1,53 @@
+from typing import Iterator, List, Any, Generator
 from data_structures import MapBase
-from sorted_table_map_abstract import SortedTableMapAbstract
-from typing import List, Any, Generator
 
-class SortedTableMap(SortedTableMapAbstract):
+class SortedTableMap(MapBase):
     
     def __init__(self) -> None:
-        self._table = []
+        self._table: List[MapBase._Item] = []
         
         
     def __len__(self) -> int:
         return len(self._table)
     
     
-    def __str__ (self) -> str:
-        for item in self._table:
-            return ", ".join(str(item))
-    
-    
     def __repr__(self) -> str:
-        return str(self)
+        return self.__str__()
+    
+    
+    def __str__(self) -> str:
+        return ', '.join(str(item) for item in self._table)
     
     
     def __getitem__(self, k: Any) -> Any:
-        low, high = 0, len(self._table) - 1
-        
-        while low <= high:
-            mid = (low + high) // 2
-            
-            if self._table[mid]._key == k:
-                return self._table[mid]._value
-            elif self._table[mid]._key < k:
-                low = mid + 1
-            else:
-                high = mid - 1
-                
-        raise KeyError(f"Clave {k} no encontrada.")
+        for item in self._table:
+            if item._key == k:
+                return item._value
+        raise KeyError(f'Key {k} no encontrada.')
     
     
     def __setitem__(self, k: Any, v: Any) -> None:
-        low, high = 0, len(self._table) - 1
-        
-        while low <= high:
-            mid = (low + high) // 2
-            
-            if self._table[mid]._key == k:
-                self._table[mid]._value = v
+        for item in self._table:
+            if item._key  == k:
+                item._value = v
                 return
-            elif self._table[mid]._key < k:
-                low = mid + 1
-            else:
-                high = mid - 1
-                
-        self._table.insert(low, self._Item(k, v))     
+        self._table.append(MapBase._Item(k, v))
+        self._table.sort(key = lambda x: x._key )
     
     
     def __delitem__(self, k: Any) -> None:
-        low, high = 0, len(self._table) - 1
-        
-        while low <= high:
-            mid = (low + high) // 2
-            
-            if self._table[mid]._key == k:
-                self._table.pop(mid)
+        for item in self._table:
+            if item._key == k:
+                self._table.remove(item)
                 return
-            elif self._table[mid]._key < k:
-                low = mid + 1
-            else:
-                high = mid - 1
-                
-        raise KeyError(f"Clave {k} no encontrada.")
-        
-        
+        raise KeyError("La clave no se encontro")
+    
+    
     def __iter__(self) -> Generator[Any, None, None]:
         for item in self._table:
             yield item._key
-
-
-    def iter_items(self) -> Generator[MapBase._Item, None, None]:
+    
+    
+    def iter_items(self) -> Generator[Any, None, None]:
         for item in self._table:
-            yield item
+            yield item._key, item._value
