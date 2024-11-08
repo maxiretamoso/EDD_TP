@@ -1,6 +1,7 @@
 def tabla_multiplicar():
     while True:
         try:
+            
             num = int(input("Ingrese un número entre 1 y 20: "))
 
             if 1 <= num <= 20:
