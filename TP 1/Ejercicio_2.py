@@ -1,18 +1,22 @@
-# Programe la función es_multiplo(n, m) que tome dos valores enteros como argumento y 
-# retorne True si n es múltiplo de m, esto es, si n = m * i para algún entero i, y False en caso contrario
-def es_multiplo(n, m):
-    i = n//m           # // operador de division entera (Divide entre dos numeros y redondea el resultado)
-    if n == m * i:
+def es_multiplo(n,m):
+    i = 0
+    while i < n:
+        i += m
+        
+    if i == n:
         return True
-    else: 
+    else:
         return False
-    
-# Demuestre el correcto funcionamiento de la función es_multiplo invocándola a través de una aplicación 
-# de consola donde el usuario pueda ingresar datos y visualizar los resultados
-n = int(input("Ingresar valor de n:"))
-m = int(input("Ingresar valor de m:"))
 
-if es_multiplo(n, m):
-    print(n, "Es multiplo de", m)
+while True:
+    try:
+        n = int(input("Ingrese el primer numero entero: "))
+        m = int(input("Ingrese el segundo numero entero: "))
+        break
+    except ValueError:
+        print("No ha ingresado un numero entero, vuelva a ingresar")    
+    
+if es_multiplo(n,m):
+    print(f'{n} es multiplo de {m}')
 else:
-    print(n, "No es multiplo de", m)
+    print(f'{n} no es multiplo de {m}')
