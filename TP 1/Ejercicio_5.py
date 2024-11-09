@@ -1,4 +1,4 @@
-def min_max(data):
+def min_max(sec):
     if not sec:  
         print("\nLa secuencia esta vacia")
         while True:
@@ -17,16 +17,16 @@ def min_max(data):
                 except ValueError:
                     print("No ha ingresado un numero entero, vuelva a ingresar")
 
-    may, men = data[0], data[0]
+    print(f'\nSecuencia: {sec}')
+    may, men = 0, 9999999999999
 
-    for i in data:
+    for i in sec:
         if i > may:
            may = i
         if i < men:
             men = i
-    
     return(may, men)
+    
 
-sec = [2,4,8,16,32]
-print(f'Secuencia: {sec}')
-print(f'Mayor y menor valor: {min_max(sec)}')
+sec = [32,10,5,16,4]
+print(f'Mayor y menor valor de la secuencia: {min_max(sec)}')
