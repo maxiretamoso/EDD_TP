@@ -3,7 +3,7 @@ def secuencia(num):
         print("\nLa secuencia esta vacia")
         while True:
             try:
-                n = int(input("¿Cuantos numeros va a usar para armar la secuencia? "))
+                n = int(input("¿Cuantos numeros va a utilizar para armar la secuencia? "))
                 break
             except ValueError:
                 print("No ha ingresado un numero entero, vuelva a ingresar")
@@ -26,5 +26,5 @@ def secuencia(num):
     print(f'El promedio es: {prom}')
     print(f'¿Todos los numeros son diferentes? {dif}')
 
-num = []
+num = [1,2,3,4,5]
 secuencia(num)

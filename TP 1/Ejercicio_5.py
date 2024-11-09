@@ -1,7 +1,23 @@
-# Programe la función min_max(data) que tome una secuencia de uno o más números y retorne el menor y 
-# el mayor de ellos en una tupla de dos posiciones de longitud
 def min_max(data):
-    may, men = data[0], data[0] 
+    if not sec:  
+        print("\nLa secuencia esta vacia")
+        while True:
+            try:
+                n = int(input("¿Cuantos numeros va a utilizar para armar la secuencia? "))
+                break
+            except ValueError:
+                print("No ha ingresado un numero entero, vuelva a ingresar")
+        
+        for i in range(n):
+            while True: 
+                try:
+                    numeros = int(input(f'Ingrese el numero {i+1}/{n}: '))
+                    sec.append(numeros)
+                    break
+                except ValueError:
+                    print("No ha ingresado un numero entero, vuelva a ingresar")
+
+    may, men = data[0], data[0]
 
     for i in data:
         if i > may:
@@ -11,6 +27,6 @@ def min_max(data):
     
     return(may, men)
 
-sec = [80, 65, 15, 24]
-result = min_max(sec)
-print(result)
+sec = [2,4,8,16,32]
+print(f'Secuencia: {sec}')
+print(f'Mayor y menor valor: {min_max(sec)}')
