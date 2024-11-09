@@ -18,7 +18,7 @@ def min_max(sec):
                     print("No ha ingresado un numero entero, vuelva a ingresar")
 
     print(f'\nSecuencia: {sec}')
-    may, men = 0, 9999999999999
+    may, men = sec[0], sec[0]
 
     for i in sec:
         if i > may:
@@ -27,6 +27,5 @@ def min_max(sec):
             men = i
     return(may, men)
     
-
-sec = [32,10,5,16,4]
-print(f'Mayor y menor valor de la secuencia: {min_max(sec)}')
+sec = [32,10,5,16,50]
+print(f'El mayor y menor valor de la secuencia es: {min_max(sec)}')
