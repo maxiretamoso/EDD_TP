@@ -1,19 +1,13 @@
-# Escriba una función Python que tome como argumento una secuencia de números enteros y determine:
 def secuencia(num):
-    # a) La sumatoria
     suma = sum(num)
-    # b) El promedio
-    prom = suma / len(num) 
-    # c) Si todos los números son diferentes entre sí, es decir, si todos los números de la lista son distintos
+    prom = suma / len(num)
     dif = len(num) == len(set(num))
     
-    return suma, prom, dif
+    print(f'\nSecuencia de numeros: {num}')
+    print(f'La sumatoria es: {suma}')
+    print(f'El promedio es: {prom}')
+    print(f'¿Los numeros son diferentes? {dif}')
 
-num = [2, 50, 35,]
-suma, prom, dif = secuencia(num)
 
-print("La sumatoria es:", suma)
-print("El promedio es:", prom)
-print("Todos los números son diferentes entre si:", dif)
-
-suma, prom, dif = secuencia(num)
+num = [5,6,4]
+secuencia(num)
