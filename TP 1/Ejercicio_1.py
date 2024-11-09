@@ -9,10 +9,10 @@ def tabla_multiplicar():
                 for i in range(1, 11):
                     print(f'{num} * {i} = {num * i}')
                 break 
-            print("El numero ingresado no está entre 1 y 20. Vuelva a intentarlo")
+            print("El numero ingresado no está entre 1 y 20. Vuelva a ingresar")
             
         except ValueError:
-            print("No ha ingresado un numero entero. Vuelva a intentarlo")
+            print("No ha ingresado un numero entero. Vuelva a ingresar")
 
 
 tabla_multiplicar()
