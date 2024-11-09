@@ -9,5 +9,5 @@ def secuencia(num):
     print(f'¿Los numeros son diferentes? {dif}')
 
 
-num = [5,6,4]
+num = (5,6,4)
 secuencia(num)
