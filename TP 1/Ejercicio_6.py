@@ -1,4 +1,4 @@
-def componentes_paises():
+def continente():
     tot_hab, tot_sup = 0, 0
     paises = []
 
@@ -10,7 +10,12 @@ def componentes_paises():
             print("\nLa cantidad de paises debe ser un numero entero, vuelva a intentarlo")
     
     for i in range(can_paises):
-        pais = input(f'Ingrese el nombre del pais {i+1}/{can_paises}: ')
+        while True:
+            pais = input(f'Ingrese el nombre del pais {i+1}/{can_paises}: ')
+            if pais.isalpha():
+                break
+            else:
+                print("El nombre del pais solo deben ser letras, vuelva a ingresar")
         while True:
             try:
                 sup = float(input(f'Ingrese la superficie de {pais}: '))
@@ -34,10 +39,10 @@ def componentes_paises():
     for pais in paises:
         print(f'\n{pais}')
     print(f'\nEl total de habitantes es: {tot_hab}')
-    print(f'\nLa superficie total es: {tot_sup}')
-    print(f'\nEl promedio de habitantes es: {prom_hab}')
+    print(f'\nLa superficie total es: {round(tot_sup,2)}')
+    print(f'\nEl promedio de habitantes es: {round(prom_hab,2)}')
     for pais in paises:
-        print(f'\nLa densidad poblacional de {pais["pais"]} es: {densidad}')
+        print(f'\nLa densidad poblacional de {pais["pais"]} es: {round(densidad,2)}')
 
-        
-componentes_paises()
+
+continente()
