@@ -3,10 +3,10 @@ class Persona:
         self.nombre = nombre
     
     def __repr__(self):
-        return f' {self.nombre}'
+        return f' Nombre: {self.nombre}'
 
     def __str__(self):
-        return f' {self.nombre}'
+        return self.__repr__()
     
     def __eq__(self, otro_nombre):
         if isinstance(otro_nombre, Persona):

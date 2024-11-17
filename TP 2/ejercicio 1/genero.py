@@ -3,7 +3,7 @@ class Genero:
         self.genero = genero
        
     def __str__(self):
-       return f'{self.genero}'
+       return f'Genero: {self.genero}'
     
     def __eq__(self, otro_genero):
        if isinstance(otro_genero, Genero):

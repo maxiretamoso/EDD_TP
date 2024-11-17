@@ -28,8 +28,7 @@ class Pelicula:
                                 Presupuesto={self.presupuesto}
                                 Sitio web={self.sitio_web}
                                 Idioma original={self.idioma_original} 
-                                Poster={self.poster
-                                                    }
+                                Poster={self.poster}
                                 Duracion_minutos={self.duracion_minutos} 
                                 Fecha de publicacion={self.fecha_publicacion}
                                 Lista de generos={self.genres_list}
