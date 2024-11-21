@@ -10,5 +10,5 @@ class Temporada(Liga):
         
     def __eq__(self, otraTemporada):
         if isinstance(otraTemporada, Temporada):
-            return self.temporada == otraTemporada.temporada    
+            return self.nombre == otraTemporada.nombre    
         return False
