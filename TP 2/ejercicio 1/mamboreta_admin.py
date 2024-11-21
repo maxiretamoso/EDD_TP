@@ -64,6 +64,6 @@ class mamboretaAdmin(MamboretaAdminAbstract):
         lista_de_fracasos = []    
         
         for pelicula in self.lista:
-           if (pelicula.retorno - pelicula.presupuesto) < umbral:
+            if (pelicula.retorno - pelicula.presupuesto) < umbral:
                lista_de_fracasos.append(pelicula)
         return lista_de_fracasos

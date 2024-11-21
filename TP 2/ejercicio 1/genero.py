@@ -6,9 +6,9 @@ class Genero:
        return f'Genero: {self.genero}'
     
     def __eq__(self, otro_genero):
-       if isinstance(otro_genero, Genero):
+        if isinstance(otro_genero, Genero):
            return self.genero == otro_genero.genero
-       return False
+        return False
 
     def __repr__(self) -> str:
         return self.__str__()

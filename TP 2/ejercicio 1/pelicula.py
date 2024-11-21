@@ -36,9 +36,9 @@ class Pelicula:
                                                             }"""'\n'
 
     def __eq__(self, otra_pelicula):
-     if isinstance(otra_pelicula, Pelicula):
-        return self.titulo == otra_pelicula.titulo
-     return False
+        if isinstance(otra_pelicula, Pelicula):
+            return self.titulo == otra_pelicula.titulo
+        return False
 
     def __repr__(self):
         return self.__str__()

@@ -1,7 +1,6 @@
-from linkedStack import LinkedStack
 from linked_stack_ext_abstract import LinkedStackExtAbstract
 from typing import Any, List
-from data_structures import ListNode
+from data_structures import LinkedStack
 
 class linkedStackExt(LinkedStackExtAbstract, LinkedStack):
 
