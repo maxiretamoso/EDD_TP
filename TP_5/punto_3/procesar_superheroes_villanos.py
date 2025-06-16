@@ -13,7 +13,7 @@ class Personaje:
     def procesar_archivo(self):
         pattern = r"(super_heroe|villano)\((\w+)\)"
         
-        with open('TP 5\\Punto 3\\superheroes_villanos.txt') as archivo:
+        with open('superheroes_villanos.txt') as archivo:
             for line in archivo:
                 match = re.match(pattern, line.strip())
                 if match:
